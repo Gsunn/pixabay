@@ -1,0 +1,49 @@
+<app-spinner *ngIf="loading"></app-spinner>
+
+<div *ngIf="!loading"class="row row-cols-1 row-cols-md-4 g-4 mt-3">
+  <div *ngFor="let imagen of listadoImagenes" class="col">
+    <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+      
+      <div class="card-header">
+        <p>{{imagen.tags}}</p>
+      </div>
+
+      <a [href]="imagen.largeImageURL" target="_blank">
+        <img [src]="imagen.previewURL" alt="">   
+      </a>
+
+      <div class="card-body ">
+        <p class="card-text d-flex justify-content-between">Likes: <strong>{{imagen.likes}}</strong></p>
+        <p class="card-text  d-flex justify-content-between">Views: <strong>{{imagen.views}}</strong></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="listadoImagenes.length" class="d-flex justify-content-center">
+  <ul class="pagination pagination-lg" (click)="paginate($event)">
+    <li class="page-item" [ngClass]="{'disabled' : paginaActual === 1}">
+      <a class="page-link" href="#" data-action="dec">&laquo;</a>
+    </li>
+    <!-- <li class="page-item active">
+      <a class="page-link" href="#">1</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">2</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">3</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">4</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">5</a>
+    </li> -->
+    <li class="page-item"  [ngClass]="{'disabled' : paginaActual === totalPaginas}">
+      <a class="page-link" href="#" data-action="inc">&raquo;</a>
+    </li>
+  </ul>
+</div>

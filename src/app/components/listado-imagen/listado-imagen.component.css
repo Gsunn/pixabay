@@ -1,0 +1,10 @@
+a > img {
+    width:100%;
+    max-height:150px
+}
+
+.card-header p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,10 @@
+.jumbotron{
+    border: 2px #ea39b8 solid;
+    box-shadow: 0px 0px 10px #ea39b8;
+    border-radius: 8px;
+    padding:30px;
+}
+
+input{
+    max-height: 60px !important;
+}
