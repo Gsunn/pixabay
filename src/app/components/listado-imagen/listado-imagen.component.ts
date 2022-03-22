@@ -60,10 +60,10 @@ export class ListadoImagenComponent implements OnInit {
 
     if(event.target.hasAttribute('data-action')){
       if(event.target.dataset.action === 'inc'){ 
-        console.log('++')
+        // console.log('++')
         this.paginaActual++
       }else{
-        console.log('--')
+        // console.log('--')
         this.paginaActual--
       }
     }
